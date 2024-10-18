@@ -47,7 +47,8 @@ RUN yum -y module enable nginx:$NGINX_VERSION && \
 
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
 #COPY $NGINX_VERSION/s2i/bin/ $STI_SCRIPTS_PATH
-COPY /s2p/ $STI_SCRIPTS_PATH
+#$STI_SCRIPTS_PATH
+COPY /s2p/ /tmp 
 COPY /s2i/bin/ /tmp
 # Copy extra files to the image.
 COPY $NGINX_VERSION/root/ /
