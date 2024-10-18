@@ -49,7 +49,7 @@ RUN yum -y module enable nginx:$NGINX_VERSION && \
 #COPY $NGINX_VERSION/s2i/bin/ $STI_SCRIPTS_PATH
 #$STI_SCRIPTS_PATH
 COPY  /root/ /
-COPY  s2p /tmp 
+COPY  sdp.txt /tmp 
 COPY /s2i/bin/ /tmp
 # Copy extra files to the image.
 COPY $NGINX_VERSION/root/ /
