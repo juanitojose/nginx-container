@@ -48,12 +48,12 @@ RUN yum -y module enable nginx:$NGINX_VERSION && \
 # Copy the S2I scripts from the specific language image to $STI_SCRIPTS_PATH
 #COPY $NGINX_VERSION/s2i/bin/ $STI_SCRIPTS_PATH
 #$STI_SCRIPTS_PATH
-COPY  /root/ /
-COPY  /s2p/ /
-COPY  sdp.txt /tmp 
-COPY /s2i/bin/ /tmp
+#COPY  /root/ /
+#COPY  /s2p/ /
+#COPY  sdp.txt /tmp 
+#COPY /s2i/bin/ /tmp
 # Copy extra files to the image.
-COPY $NGINX_VERSION/root/ /
+#COPY $NGINX_VERSION/root/ /
 
 # Changing ownership and user rights to support following use-cases:
 # 1) running container on OpenShift, whose default security model
