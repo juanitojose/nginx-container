@@ -61,7 +61,7 @@ COPY root/ /
 #    with default UID and GID (1001:0)
 # Supported combinations of UID:GID are thus following:
 # UID=1001 && GID=0
-# UID=<any>&& GID=0
+UID=<any>&& GID=0
 # UID=1001 && GID=<any>
 RUN sed -i -f ${NGINX_APP_ROOT}/nginxconf.sed ${NGINX_CONF_PATH} && \
     mkdir -p ${NGINX_APP_ROOT}/etc/nginx.d/ && \
