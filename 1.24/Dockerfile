@@ -62,7 +62,7 @@ COPY root/ /
 # Supported combinations of UID:GID are thus following:
 # UID=1001 && GID=0
 # UID=<any>&& GID=0
-# UID=1001 && GID=<any>
+ UID=1001 && GID=<any>
 RUN sed -i -f ${NGINX_APP_ROOT}/nginxconf.sed ${NGINX_CONF_PATH} && \
     mkdir -p ${NGINX_APP_ROOT}/etc/nginx.d/ && \
     mkdir -p ${NGINX_APP_ROOT}/etc/nginx.default.d/ && \
@@ -80,7 +80,6 @@ RUN sed -i -f ${NGINX_APP_ROOT}/nginxconf.sed ${NGINX_CONF_PATH} && \
     chmod -R ug+rwX ${NGINX_APP_ROOT}/src/nginx-start/  && \
     chmod -R ug+rwX ${NGINX_CONTAINER_SCRIPTS_PATH}/nginx-start && \
     chmod -R ug+rwX /var/lib/nginx /var/log/nginx /run && \
-    chmod +x /usr/libexec/s2i/usage
     rpm-file-permissions
 
 USER 1001
