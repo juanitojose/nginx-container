@@ -81,7 +81,7 @@ RUN sed -i -f ${NGINX_APP_ROOT}/nginxconf.sed ${NGINX_CONF_PATH} && \
     chmod -R ug+rwX ${NGINX_CONTAINER_SCRIPTS_PATH}/nginx-start && \
     chmod -R ug+rwX /var/lib/nginx /var/log/nginx /run && \
     rpm-file-permissions && \
-    chmod -R <any>:1001 /usr/libexec/s2i
+    chmod -R 777 /usr/libexec/s2i
 USER 1001
 
 STOPSIGNAL SIGQUIT
